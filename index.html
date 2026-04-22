@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ôn tập trắc nghiệm Sinh học 12 kì II</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">Sinh học 12 • Ôn tập học kì II</p>
+          <h1>Web ôn luyện trắc nghiệm</h1>
+          <p class="hero-text">
+            Giữ nguyên câu hỏi, hình minh họa và bảng số liệu từ tài liệu gốc. Bài làm được
+            lưu tự động để có thể quay lại câu đang dở nhanh hơn.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <button id="resume-button" class="ghost-button" hidden>Tiếp tục làm dở</button>
+          <button id="reset-button" class="ghost-button">Làm lại</button>
+        </div>
+      </header>
+
+      <section class="summary-grid" id="summary-grid" aria-label="Tóm tắt tiến độ">
+        <article class="summary-card">
+          <span class="summary-label">Tổng câu</span>
+          <strong id="total-count" class="summary-value">0</strong>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Hoàn thành</span>
+          <strong id="completed-count" class="summary-value">0</strong>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Đang dở</span>
+          <strong id="partial-count" class="summary-value">0</strong>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Còn lại</span>
+          <strong id="remaining-count" class="summary-value">0</strong>
+        </article>
+      </section>
+
+      <section class="result-panel" id="result-panel" hidden>
+        <div class="result-copy">
+          <p class="eyebrow">Kết quả</p>
+          <h2 id="score-heading">0.00 / 0.00</h2>
+          <p id="score-subtext" class="result-subtext"></p>
+        </div>
+
+        <div class="review-filters" id="review-filters">
+          <button class="filter-button active" data-filter="all">Tất cả</button>
+          <button class="filter-button" data-filter="correct">Câu đúng</button>
+          <button class="filter-button" data-filter="wrong">Câu sai / thiếu</button>
+        </div>
+      </section>
+
+      <section class="nav-card">
+        <div class="nav-head">
+          <div>
+            <p class="eyebrow">Điều hướng nhanh</p>
+            <h2>Danh sách câu</h2>
+          </div>
+          <button id="toggle-nav-button" class="ghost-button compact" aria-expanded="true">
+            Thu gọn
+          </button>
+        </div>
+
+        <div id="question-nav" class="question-nav" aria-label="Điều hướng câu hỏi"></div>
+      </section>
+
+      <main id="quiz-root" class="quiz-root" aria-live="polite"></main>
+    </div>
+
+    <div class="floating-stack">
+      <button id="to-top-button" class="fab fab-secondary" aria-label="Lên đầu trang">
+        Lên đầu
+      </button>
+      <button id="submit-button" class="fab fab-primary">
+        <span>Nộp bài</span>
+        <strong id="submit-progress">0 / 0</strong>
+      </button>
+    </div>
+
+    <script src="./quiz-data.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
